@@ -1,22 +1,264 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jérôme Essola — Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio de Jérôme Essola Elanga, étudiant en Master de Robotique à l’EPFL : robotique, perception et mécatronique.">
+<title>Jérôme Essola Elanga — Portfolio</title>
+<style>
+:root{--bg:#f6f5ef;--ink:#24352c;--green:#285e45;--muted:#606d64;--line:#d5dbd0;--pale:#e7ecdf}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}a{color:inherit}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a46524;outline-offset:4px}.wrap{width:min(1160px,90%);margin:auto}header{border-bottom:1px solid var(--line)}nav{display:flex;justify-content:space-between;align-items:center;gap:25px;min-height:84px}.brand{font-size:25px;font-weight:800;text-decoration:none}.brand span{color:var(--green)}.links{display:flex;gap:25px;font-size:14px}.links a{text-decoration:none}.links a:hover{text-decoration:underline}.hero{display:grid;grid-template-columns:1.6fr 1fr;gap:60px;align-items:end;padding:85px 0}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold;color:var(--green)}h1{font-size:clamp(42px,6vw,74px);line-height:1.06;letter-spacing:-3px;margin:22px 0}h1 span{color:var(--green)}.intro{font-size:18px;color:var(--muted);max-width:620px}.button{display:inline-block;padding:13px 22px;background:var(--green);color:white;text-decoration:none;margin-top:18px}.note{border-left:1px solid var(--line);padding:10px 0 10px 28px}.note p{font-size:21px}.small{font-size:13px;color:var(--muted)}h2{font-size:32px;line-height:1.2;letter-spacing:-1px}h3{font-size:29px;line-height:1.2;letter-spacing:-.8px;margin:14px 0 20px}.section-head{border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.project{display:grid;grid-template-columns:1fr 1.35fr;gap:50px;padding-bottom:50px;margin-bottom:50px;border-bottom:1px solid var(--line)}.copy p{color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0}.tag{font-size:12px;border:1px solid #c7d0c0;border-radius:3px;padding:4px 10px}.facts{display:flex;gap:24px;padding:18px 0;border-top:1px solid var(--line)}.facts strong{display:block;font-size:25px}.facts span{font-size:12px;color:var(--muted)}summary{cursor:pointer;font-size:14px;font-weight:bold}details{margin-top:18px}details ul{padding-left:20px;color:var(--muted);font-size:14px}figure{margin:0}.stage{aspect-ratio:4/3;display:grid;place-items:center;position:relative;overflow:hidden;background:var(--pale);border:1px solid var(--line)}.stage img,.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--pale)}.placeholder{text-align:center;padding:25px;color:var(--green)}.symbol{display:block;font-size:46px}.placeholder strong{display:block;font-size:20px}.placeholder p{font-size:13px;color:var(--muted)}.bar{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.bar button{background:transparent;border:1px solid var(--line);width:44px;height:44px;flex-shrink:0;font-size:22px;color:var(--ink)}.bar button:hover{background:var(--pale)}.bar button:disabled{opacity:.3;cursor:default}.caption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.bar .count{flex:1;text-align:center}.count{font:12px monospace;white-space:nowrap;color:var(--muted)}.dots{display:flex;flex-wrap:wrap;margin-top:7px}.dots button{background:transparent;border:0;width:32px;height:32px;padding:10px}.dots button:after{content:'';display:block;height:6px;background:#c2cbbd}.dots button[aria-current=true]:after{background:var(--green)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}.grid .project{display:flex;flex-direction:column;gap:18px}.grid .gallery{width:100%;margin-top:auto}.grid .stage{aspect-ratio:16/10}.explorations{padding:26px;background:var(--pale);margin-bottom:65px}.explorations h3{font-size:22px}.explorations p{color:var(--muted)}.about{display:grid;grid-template-columns:1fr 1.5fr;gap:65px;padding-bottom:65px}.about h2{margin-top:15px}.about p{color:var(--muted)}.skills{display:grid;grid-template-columns:1fr 1fr;gap:20px}.skills p{font-size:14px;margin-top:5px}footer{border-top:1px solid var(--line);padding:25px 0;font-size:13px;color:var(--muted)}footer .wrap{display:flex;justify-content:space-between;gap:20px}.skip{position:fixed;top:-80px;padding:10px;background:white;z-index:10}.skip:focus{top:10px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:50px 0;gap:25px}.note p{font-size:18px}.project{grid-template-columns:1fr;gap:24px}.grid{grid-template-columns:1fr;margin-bottom:45px}.grid .project{margin-bottom:0}.about{grid-template-columns:1fr;gap:20px}.section-head{align-items:start;flex-direction:column;gap:0}.links{gap:14px}h1{letter-spacing:-2px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Accès au CV depuis la navigation et l’accueil. */
+.links{align-items:center;flex-wrap:wrap}
+.links .cv-nav{background:var(--green);color:white;padding:10px 16px;font-weight:bold;border-radius:3px}
+.links .cv-nav:hover,.hero-actions .button:not(.button-secondary):hover{background:#1e4935;text-decoration:none}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-actions .button{margin-top:0;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--green);border-radius:3px}
+.hero-actions .button-secondary{background:transparent;color:var(--green)}
+.hero-actions .button-secondary:hover{background:var(--pale)}
+.file-type{font-size:11px;border:1px solid currentColor;padding:1px 5px;border-radius:2px}
+@media(max-width:480px){nav{flex-wrap:wrap;gap:12px;padding:16px 0}.links{gap:12px}.links .cv-nav{padding:9px 12px}.hero-actions .button{width:100%}}
+</style>
 </head>
-
 <body>
-  <h1>Jérôme Essola</h1>
-
-  <p>
-    Étudiant en Master de Robotique à l’EPFL.
-  </p>
-
-  <p>
-    Robotique, électronique embarquée, mécatronique et prototypage.
-  </p>
-
-  <h2>Portfolio en construction</h2>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header><nav class="wrap" aria-label="Navigation principale"><a class="brand" href="#">JE<span>.</span></a><div class="links"><a href="#projets">Projets</a><a href="#apropos">À propos</a><a class="cv-nav" href="Documents/Jerome_ESSOLA_ELANGA_CV.pdf" download>Télécharger mon CV ↓</a></div></nav></header>
+<main id="contenu" class="wrap">
+<section class="hero" aria-labelledby="titre"><div><div class="eyebrow">Jérôme Essola Elanga · Portfolio</div><h1 id="titre">Concevoir.<br>Programmer.<br><span>Mettre en mouvement.</span></h1><p class="intro">Étudiant en Master de Robotique à l’EPFL, j’explore le lien entre mécanique, électronique embarquée et logiciel à travers mes projets.</p><div class="hero-actions"><a class="button" href="Documents/Jerome_ESSOLA_ELANGA_CV.pdf" download>Télécharger mon CV <span aria-hidden="true">↓</span> <span class="file-type">PDF</span></a><a class="button button-secondary" href="#projets">Découvrir mes projets ↘</a></div></div><aside class="note"><div class="eyebrow">Du concept au prototype</div><p>Des robots à pattes.<br>Des systèmes qui perçoivent.<br>Du code qui agit.</p><span class="small">Robotique / Mécatronique / Prototypage</span></aside></section>
+<section id="projets" aria-labelledby="projets-titre"><div class="section-head"><h2 id="projets-titre">Une sélection de projets</h2><span class="small">Conception, perception et contrôle</span></div>
+<article class="project" id="quadrupede"><div class="copy"><div class="eyebrow">01 / Robotique · GC Valobot</div><h3>Un quadrupède pour explorer autrement.</h3><p>Concevoir un robot à quatre pattes pour suivre une ligne et parcourir un labyrinthe : un projet qui réunit mécanique, perception et commande embarquée. Les pattes en parallélogramme maintiennent leurs extrémités perpendiculaires à la base, tandis que la cinématique permet de commander translations et rotations.</p><div class="tags"><span class="tag">CATIA V5</span><span class="tag">Raspberry Pi Pico</span><span class="tag">Cinématique</span><span class="tag">I2C</span></div><div class="facts"><div><strong>4</strong><span>pattes articulées</span></div><div><strong>8</strong><span>servomoteurs</span></div><div><strong>550 g</strong><span>masse totale</span></div></div><details><summary>Dans les coulisses du projet</summary><ul><li>Conception mécanique et étude des mouvements avec CATIA V5 et GeoGebra.</li><li>Détection de ligne avec une caméra OV7670, à 160 × 120 pixels et 3 images par seconde.</li><li>Trois capteurs VL53L0X pour repérer les murs du labyrinthe.</li><li>Répartition des tâches sur les deux cœurs du Pico et synchronisation des échanges I2C.</li><li>Commande des servomoteurs via un PCA9685 ; correction en boucle fermée prévue pour affiner le déplacement.</li></ul></details></div><div class="gallery" data-gallery="quadrupede" aria-label="Galerie du quadrupède"></div></article>
+<article class="project" id="lidar"><div class="copy"><div class="eyebrow">02 / Perception · EPFL Racing Team</div><h3>Lire la piste avec un LiDAR.</h3><p>Au sein de l’EPFL Racing Team, j’ai travaillé sur la perception et l’intégration d’un LiDAR Ouster OS1 rev 7 pour les épreuves Driverless de Formula Student. La chaîne ROS couvre l’acquisition et le traitement des nuages de points, la suppression du sol et le regroupement par DBSCAN pour repérer les cônes. Le travail inclut aussi l’intégration de l’IMU du LiDAR et une interface de test de ses mesures.</p><div class="tags"><span class="tag">ROS</span><span class="tag">Nuages de points</span><span class="tag">RANSAC</span><span class="tag">DBSCAN</span></div></div><div class="gallery" data-gallery="lidar" aria-label="Galerie du projet LiDAR"></div></article>
+<div class="grid">
+<article class="project" id="pid"><div class="copy"><div class="eyebrow">03 / Automatique</div><h3>Table PID</h3><p>Conception d’un kit pédagogique pour un atelier ROBOVALY à l’EPFL : une table à un axe ramène automatiquement une bille vers une position de référence. Le projet associe modélisation et impression 3D, conception du circuit imprimé, intégration de capteurs de distance ToF, réglage du PID et interface graphique.</p><div class="tags"><span class="tag">Contrôle PID</span><span class="tag">Capteurs ToF</span><span class="tag">Électronique</span></div></div><div class="gallery" data-gallery="pid" aria-label="Galerie de la table PID"></div></article>
+<article class="project" id="pid2d"><div class="copy"><div class="eyebrow">04 / Automatique · Manipulateur parallèle</div><h3>Table PID 2D · Plateforme 3-RRS</h3><p>Maintenir une bille en équilibre sur une plateforme parallèle 3-RRS grâce à un asservissement PID en deux dimensions. Un écran tactile résistif à quatre fils mesure la position de la bille en X et Y. Le correcteur calcule les ajustements de tangage et de roulis, puis la cinématique inverse traduit cette orientation en angles pour les trois articulations commandées par servomoteurs.</p><div class="tags"><span class="tag">PID en boucle fermée</span><span class="tag">Cinématique inverse</span><span class="tag">3-RRS</span><span class="tag">Écran résistif</span></div></div><div class="gallery" data-gallery="pid2d" aria-label="Galerie : Table PID 2D · Plateforme 3-RRS"></div></article>
+<article class="project" id="epuck"><div class="copy"><div class="eyebrow">05 / Robotique</div><h3>E-puck & bras robotique</h3><p>Programmation du robot E-puck, conception et programmation d’un bras robotique : une exploration de la cinématique et du logiciel appliqués à la robotique.</p><div class="tags"><span class="tag">E-puck</span><span class="tag">Cinématique</span><span class="tag">Programmation</span></div></div><div class="gallery" data-gallery="epuck" aria-label="Galerie E-puck et bras robotique"></div></article>
+<article class="project" id="thymio"><div class="copy"><div class="eyebrow">06 / Robotique · Projet en cours</div><h3>Thymio · Ramasser et trier</h3><p>Le but de ce projet est de développer un robot ramasseur et trieur autour du Thymio. Le travail porte sur l’intégration et la programmation des fonctions de collecte et de tri. Le projet est encore en cours ; les vidéos présentent les étapes de développement.</p><div class="tags"><span class="tag">Thymio</span><span class="tag">Ramassage et tri</span><span class="tag">En cours</span></div></div><div class="gallery" data-gallery="thymio" aria-label="Galerie : Thymio · Ramasser et trier"></div></article>
+<article class="project" id="bbm8"><div class="copy"><div class="eyebrow">07 / Projet en équipe</div><h3>BB-M8</h3><p>Conception d’un robot inspiré de BB-8 dans le cadre du cours « Make Intelligent Things » à l’EPFL. Du prototypage mécanique à la commande : modélisation et impression 3D, conception électrique, intégration mécanique, interface de pilotage et réglage PID. Le développement en équipe s’appuie sur Git et des réunions Scrum.</p><div class="tags"><span class="tag">Git</span><span class="tag">Scrum</span><span class="tag">Travail en équipe</span></div></div><div class="gallery" data-gallery="bbm8" aria-label="Galerie de BB-M8"></div></article>
+<article class="project" id="vision"><div class="copy"><div class="eyebrow">08 / Vision & commande</div><h3>Vision Bot · Suivre un point rouge</h3><p>Un robot à deux degrés de liberté qui suit un point rouge à l’aide d’une caméra. Le projet relie la détection visuelle de la cible à la commande des deux axes pour orienter le robot vers le point suivi.</p><div class="tags"><span class="tag">Vision par caméra</span><span class="tag">2 degrés de liberté</span><span class="tag">Suivi de cible</span></div></div><div class="gallery" data-gallery="vision" aria-label="Galerie : Vision Bot · Suivre un point rouge"></div></article>
+<article class="project" id="hexapod"><div class="copy"><div class="eyebrow">09 / Robotique · Prototypage</div><h3>Hexapode · Premiers pas</h3><p>Un robot à six pattes, développé avant le quadrupède. Les photos des versions V1 et V2 et les démonstrations retracent les étapes de ce prototype de robot marcheur.</p><div class="tags"><span class="tag">Hexapode</span><span class="tag">Locomotion</span><span class="tag">Prototypage</span></div></div><div class="gallery" data-gallery="hexapod" aria-label="Galerie : Hexapode · Premiers pas"></div></article>
+<article class="project" id="code"><div class="copy"><div class="eyebrow">10 / Programmation</div><h3>Du code au jeu</h3><p>Des petits projets inspirés de Tetris et de Geometry Dash pour explorer la programmation et la création d’interfaces graphiques avec GTKmm 4.</p><div class="tags"><span class="tag">GTKmm 4</span><span class="tag">Interface graphique</span><span class="tag">Jeux</span></div></div><div class="gallery" data-gallery="code" aria-label="Galerie des projets de programmation"></div></article>
+</div><aside class="explorations"><div class="eyebrow">Autres explorations</div><h3>Sur mon établi</h3><p>Une horloge artisanale complète mes explorations en conception et en prototypage.</p></aside></section>
+<section class="about" id="apropos" aria-labelledby="apropos-titre"><div><div class="eyebrow">À propos</div><h2 id="apropos-titre">Faire dialoguer le matériel et le logiciel.</h2></div><div><p>Titulaire d’un Bachelor en microtechnique de l’EPFL, je poursuis un Master en robotique. Mon expérience réunit prototypage rapide, conception mécanique, électronique embarquée et intégration de capteurs. Je développe des systèmes qui relient le matériel, la perception et la commande, avec notamment Python, C/C++, MATLAB et ROS / ROS 2.</p><div class="skills"><div><strong>Concevoir</strong><p>CAO, mécanismes, prototypage.</p></div><div><strong>Intégrer</strong><p>Électronique, capteurs, systèmes embarqués.</p></div><div><strong>Percevoir</strong><p>Vision, LiDAR, traitement de données.</p></div><div><strong>Commander</strong><p>Cinématique, asservissement, programmation.</p></div></div></div></section>
+</main><footer><div class="wrap"><span>Jérôme Essola Elanga · Portfolio</span><a href="#">Retour en haut ↑</a></div></footer>
+<noscript><p class="wrap">Activez JavaScript pour consulter les galeries photo et vidéo.</p></noscript>
+<script>
+/* MÉDIAS À PERSONNALISER
+   Placez vos fichiers dans Images, puis renseignez src ci-dessous.
+   Dupliquez une entrée pour ajouter une diapositive.
+   Image : { type: 'image', src: 'Images/photo.jpg', caption: 'Vue du robot', alt: 'Description de l’image' }
+   Vidéo : { type: 'video', src: 'Images/demo.mp4', caption: 'Test de marche' }
+   src: '' affiche un emplacement en attente sans charger de fichier inexistant.
+   Respectez exactement les majuscules et extensions des noms de fichiers.
+*/
+const medias = {
+  pid2d: [
+    {
+        "type": "video",
+        "src": "Images/PID Table 2D/Video 1.mp4",
+        "caption": "Vidéo 1",
+        "autoplay": true,
+        "loop": true
+    },
+    {
+        "type": "video",
+        "src": "Images/PID Table 2D/Video 2.mp4",
+        "caption": "Vidéo 2",
+        "autoplay": true,
+        "loop": true
+    }
+],
+  thymio: [
+    {
+        "type": "video",
+        "src": "Images/Thymio Operator/video-1-web.mp4",
+        "caption": "Vidéo 1",
+        "autoplay": true,
+        "loop": true
+    },
+    {
+        "type": "video",
+        "src": "Images/Thymio Operator/Video 2.mp4",
+        "caption": "Vidéo 2",
+        "autoplay": true,
+        "loop": true
+    }
+],
+  vision: [
+    {
+        "type": "video",
+        "src": "Images/Vision Bot/Video 1.mp4",
+        "caption": "Vidéo 1",
+        "autoplay": true,
+        "loop": true
+    }
+],
+  hexapod: [
+    {
+        "type": "video",
+        "src": "Images/Hexapod and Quadruped/Hexapod/Demo principale.mp4",
+        "caption": "Démonstration principale",
+        "autoplay": true,
+        "loop": true
+    },
+    {
+        "type": "image",
+        "src": "Images/Hexapod and Quadruped/Hexapod/V1 - img1.jpg",
+        "caption": "V1 - vue 1",
+        "alt": "Hexapod · V1 - vue 1"
+    },
+    {
+        "type": "image",
+        "src": "Images/Hexapod and Quadruped/Hexapod/V1 - img2.jpg",
+        "caption": "V1 - vue 2",
+        "alt": "Hexapod · V1 - vue 2"
+    },
+    {
+        "type": "image",
+        "src": "Images/Hexapod and Quadruped/Hexapod/V2 - img1.jpg",
+        "caption": "V2 - vue 1",
+        "alt": "Hexapod · V2 - vue 1"
+    },
+    {
+        "type": "image",
+        "src": "Images/Hexapod and Quadruped/Hexapod/V2 - img2.jpg",
+        "caption": "V2 - vue 2",
+        "alt": "Hexapod · V2 - vue 2"
+    },
+    {
+        "type": "video",
+        "src": "Images/Hexapod and Quadruped/Hexapod/Demo secondaire.mp4",
+        "caption": "Démonstration secondaire",
+        "autoplay": true,
+        "loop": true
+    }
+],
+  quadrupede: [
+    {type:'video', src:'Images/Hexapod and Quadruped/Quadruped/Prototypage 4.mp4', caption:'Quadrupède · Prototypage 4', autoplay:true, loop:true},
+    {type:'video', src:'Images/Hexapod and Quadruped/Quadruped/Prototypage 1.mp4', caption:'Quadrupède · Prototypage 1', autoplay:true, loop:true},
+    {type:'video', src:'Images/Hexapod and Quadruped/Quadruped/Prototypage 2.mp4', caption:'Quadrupède · Prototypage 2', autoplay:true, loop:true},
+    {type:'video', src:'Images/Hexapod and Quadruped/Quadruped/Prototypage 3.mp4', caption:'Quadrupède · Prototypage 3', autoplay:true, loop:true}
+  ],
+  lidar: [
+    {type:'video', src:'Images/EPFLRT LiDAR/demo-point-cloud-web.mp4', caption:'LiDAR · Visualisation du nuage de points', autoplay:true, loop:true},
+    {type:'video', src:'Images/EPFLRT LiDAR/Demo 1.mp4', caption:'LiDAR · Démonstration 1', autoplay:true, loop:true}
+  ],
+  pid: [
+    {type:'video', src:'Images/PID Table/video_2026-11-26_15-47-32.mp4', caption:'Démonstration de l’asservissement', autoplay:true, loop:true},
+    {type:'image', src:'Images/PID Table/photo_2026-11-26_15-49-57.jpg', caption:'Prototype de la table PID', alt:'Photo du prototype de la table PID'}
+  ],
+  bbm8: [
+    {
+        "type": "image",
+        "src": "Images/BB-M8/Image 1.jpg",
+        "caption": "Image 1",
+        "alt": "BB-M8 · Image 1"
+    },
+    {
+        "type": "image",
+        "src": "Images/BB-M8/Image 2.jpg",
+        "caption": "Image 2",
+        "alt": "BB-M8 · Image 2"
+    },
+    {
+        "type": "image",
+        "src": "Images/BB-M8/Image 3.jpg",
+        "caption": "Image 3",
+        "alt": "BB-M8 · Image 3"
+    },
+    {
+        "type": "video",
+        "src": "Images/BB-M8/Video a mettre en dernier.mp4",
+        "caption": "Démonstration de BB-M8",
+        "autoplay": true,
+        "loop": true
+    }
+],
+  code: [{type:'image', src:'', caption:'Interface du jeu Tetris', alt:'Capture du jeu Tetris'}, {type:'video', src:'', caption:'Jeu inspiré de Geometry Dash'}],
+  epuck: [
+    {
+        "type": "video",
+        "src": "Images/e-puck operator/Video 1.mp4",
+        "caption": "Vidéo 1",
+        "autoplay": true,
+        "loop": true
+    },
+    {
+        "type": "video",
+        "src": "Images/e-puck operator/Video 2.mp4",
+        "caption": "Vidéo 2",
+        "autoplay": true,
+        "loop": true
+    },
+    {
+        "type": "video",
+        "src": "Images/e-puck operator/Video 3.mp4",
+        "caption": "Vidéo 3",
+        "autoplay": true,
+        "loop": true
+    }
+]
+};
+document.querySelectorAll('[data-gallery]').forEach(gallery => {
+  const slides = medias[gallery.dataset.gallery] || [];
+  let current = 0;
+  gallery.setAttribute('role','region');
+  gallery.setAttribute('aria-roledescription','carrousel');
+  gallery.innerHTML = '<figure><div class="stage"></div><figcaption class="bar"><button type="button" class="prev" aria-label="Média précédent">←</button><span class="caption" aria-live="polite" aria-atomic="true"></span><span class="count"></span><button type="button" class="next" aria-label="Média suivant">→</button></figcaption></figure><div class="dots" role="group" aria-label="Choisir un média"></div>';
+  const stage = gallery.querySelector('.stage');
+  const dots = gallery.querySelector('.dots');
+  function placeholder(slide, failed = false) {
+    const box = document.createElement('div'); box.className = 'placeholder';
+    const symbol = document.createElement('span'); symbol.className = 'symbol'; symbol.textContent = slide.type === 'video' ? '▷' : '▧'; symbol.setAttribute('aria-hidden','true');
+    const title = document.createElement('strong'); title.textContent = failed ? 'Média indisponible' : slide.type === 'video' ? 'Vidéo à venir' : 'Image à venir';
+    box.append(symbol,title); stage.replaceChildren(box);
+  }
+  slides.forEach((slide,index) => {
+    const dot = document.createElement('button'); dot.type = 'button'; dot.setAttribute('aria-label','Afficher : ' + slide.caption);
+    dot.addEventListener('click',() => show(index)); dots.append(dot);
+  });
+  function show(index) {
+    const previousVideo = stage.querySelector('video'); if (previousVideo) previousVideo.pause();
+    stage.replaceChildren();
+    if (!slides.length) {
+      placeholder({type:'image',caption:'La galerie sera bientôt disponible.'});
+      gallery.querySelector('.caption').textContent = 'Galerie à venir';
+      gallery.querySelectorAll('.prev,.next').forEach(button => button.disabled = true);
+      return;
+    }
+    current = (index + slides.length) % slides.length;
+    const slide = slides[current];
+    if (!slide.src) placeholder(slide);
+    else {
+      const media = document.createElement(slide.type === 'video' ? 'video' : 'img');
+      if (slide.type === 'video') {
+        media.controls = true;
+        media.playsInline = true;
+        media.preload = 'metadata';
+        // La lecture automatique silencieuse est autorisée par la plupart des navigateurs.
+        media.muted = Boolean(slide.autoplay);
+        media.defaultMuted = Boolean(slide.autoplay);
+        media.autoplay = Boolean(slide.autoplay);
+        media.loop = Boolean(slide.loop);
+        media.setAttribute('aria-label',slide.caption);
+      }
+      else { media.alt = slide.alt || slide.caption; media.loading = 'lazy'; media.decoding = 'async'; }
+      media.addEventListener('error',() => { if (stage.contains(media)) placeholder(slide,true); },{once:true});
+      media.src = slide.src; stage.append(media);
+    }
+    gallery.querySelector('.caption').textContent = slide.caption;
+    gallery.querySelector('.count').textContent = `${current + 1} / ${slides.length}`;
+    Array.from(dots.children).forEach((dot,i) => dot.setAttribute('aria-current',String(i === current)));
+    gallery.querySelectorAll('.prev,.next').forEach(button => button.disabled = slides.length < 2);
+  }
+  gallery.querySelector('.prev').addEventListener('click',() => show(current - 1));
+  gallery.querySelector('.next').addEventListener('click',() => show(current + 1));
+  gallery.addEventListener('keydown',event => {
+    if (event.target.closest('video')) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); show(current + (event.key === 'ArrowRight' ? 1 : -1)); }
+  });
+  show(0);
+});
+</script>
 </body>
 </html>
