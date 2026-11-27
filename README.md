@@ -28,3 +28,7 @@ Pour publier avec GitHub Pages, inclure `index.html`, les médias et le PDF lié
 ## Vidéos compressées pour le web
 
 Les originaux `Images/EPFLRT LiDAR/Demo point cloud.mov` et `Images/Thymio Operator/Video 1.mp4` sont conservés localement et exclus par `.gitignore`. Le site utilise `demo-point-cloud-web.mp4` et `video-1-web.mp4` dans les mêmes dossiers. Les copies utilisent H.264, 30 images/s et un en-tête MP4 optimisé pour démarrer la lecture avant la fin du téléchargement. L’outil local `.codex-video-tools/` est également ignoré.
+
+## Langues
+
+Le HTML est en anglais par défaut. Le sélecteur EN / FR traduit le contenu et les libellés accessibles, sans réinitialiser les vidéos. La préférence est conservée dans le navigateur si le stockage local est disponible. Les traductions se trouvent dans `i18n.js` : inclure ce fichier dans chaque publication. Pour modifier un texte, mettre à jour sa version anglaise dans `index.html` et la paire français / anglais correspondante dans `i18n.js`. Le CV reste le PDF fourni.
