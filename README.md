@@ -32,3 +32,11 @@ Les originaux `Images/EPFLRT LiDAR/Demo point cloud.mov` et `Images/Thymio Opera
 ## Langues
 
 Le HTML est en anglais par défaut. Le sélecteur EN / FR traduit le contenu et les libellés accessibles, sans réinitialiser les vidéos. La préférence est conservée dans le navigateur si le stockage local est disponible. Les traductions se trouvent dans `i18n.js` : inclure ce fichier dans chaque publication. Pour modifier un texte, mettre à jour sa version anglaise dans `index.html` et la paire français / anglais correspondante dans `i18n.js`. Le CV reste le PDF fourni.
+
+## Lecture et chargement des médias
+
+Inclure `media.js` dans le déploiement. Les vidéos reçoivent leur source à moins de 300 pixels de l’écran ; la lecture automatique ne commence que lorsqu’au moins 15 % de la vidéo est visible. Elle est suspendue hors écran et dans les onglets masqués. Une pause manuelle reste respectée lors du défilement. Le changement de diapositive libère la source précédente. La préférence système de réduction des animations désactive le démarrage automatique ; les commandes natives restent disponibles.
+
+Les versions `-web.mp4` sont des copies H.264 optimisées (30 images/s, dimensions conservant les proportions, démarrage progressif). Les originaux optimisés sont conservés localement, ignorés par Git et retirés du suivi courant ; les anciens commits restent inchangés.
+
+Les six photos volumineuses ont aussi une copie `-web.jpg` (JPEG progressif, côté maximal de 1600 pixels). Les originaux restent disponibles localement et sont exclus du suivi Git courant.
